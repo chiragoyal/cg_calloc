@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <malloc.h>
+struct list 
+{
+	int rollno;
+	int age;
+	struct list*next;
+	};
+struct list*ptr,*ptr1,*start=NULL,*last;
+int main()
+{
+	int ag,rn;
+	while(1)
+	{
+	printf("\nenter rollno:");
+	scanf("%d",&rn);
+	if(rn==0)
+		break;
+	printf("\nenter age:");
+	scanf("%d",&ag);
+	ptr=(struct list*)(malloc(sizeof(struct list)));
+	ptr->rollno=rn;
+	ptr->age=ag;
+	ptr->next=NULL;
+if(start==NULL)
+	ptr=start=last;
+else
+		{
+	ptr->next=ptr;
+	ptr=last;
+		}
+	}
+	for(ptr1=start;ptr!=NULL;ptr1=ptr1->next)
+	{
+		printf("\n%d\t%d",ptr->rollno,ptr->age);
+	}
+
+	
+	return 0;
+}
